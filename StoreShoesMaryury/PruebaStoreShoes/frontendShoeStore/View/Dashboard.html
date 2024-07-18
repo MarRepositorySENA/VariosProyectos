@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../Assets/Css/Dashboard.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="shortcut icon" href="../Assets/Img/icono2.png">
+    <script src="../Assets/lib/node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../Assets/lib/node_modules/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+    <div class="sidebar close">
+        <div class="logo-details">
+            <div class="logo_name"><img src="../Assets/Img/icono2.png" alt="" style="height: 40px;"></div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    <i class="bx bxs-cog"></i>
+                    <span class="link_name">Parametrización</span>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="Parameter/Continent.html" target="workSpace"><i class='bx bx-world'></i>Continentes</a>
+                    </li>
+                    <li><a href="Parameter/Country.html" target="workSpace"><i class='bx bxs-flag-alt'></i>Paises</a>
+                    </li>
+                    <li><a href="Parameter/Department.html" target="workSpace"><i
+                                class='bx bx-buildings'></i>Departamentos</a></li>
+                    <li><a href="Parameter/City.html" target="workSpace"><i class='bx bxs-city'></i>Ciudades</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-dashboard"></i>
+                    <span class="link_name">Operacional</span>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="Operational/Client.html" target="workSpace"><i class='bx bx-user'></i>Clientes</a></li>
+                    <li><a href="Operational/DescriptionSale.html" target="workSpace"><i
+                                class='bx bxs-book'></i>Descripciones ventas</a></li>
+                    <li><a href="Operational/Product.html" target="workSpace"><i class='bx bxs-box'></i>Productos</a>
+                    </li>
+                    <li><a href="Operational/Sale.html" target="workSpace"><i class='bx bxs-notepad'></i>Ventas</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bx bxs-shield"></i>
+                    <span class="link_name">Seguridad</span>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="Security/Person.html" target="workSpace"><i class='bx bx-group'></i>Personas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <iframe src="Board.html" class="home-section" id="workSpace" name="workSpace" frameborder="0" width="100%"
+        height="1050px"></iframe>
+    <script src="../Js/Dashboard.js"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const arrows = document.querySelectorAll(".arrow");
+            arrows.forEach(arrow => {
+                arrow.addEventListener("click", (e) => {
+                    const arrowParent = e.target.parentElement.parentElement;
+                    arrowParent.classList.toggle("showMenu");
+                });
+            });
+
+            const sidebar = document.querySelector(".sidebar");
+            const sidebarBtn = document.querySelector(".bx-menu");
+            sidebarBtn.addEventListener("click", () => {
+                sidebar.classList.toggle("close");
+            });
+        });
+
+    </script>
+</body>
+
+</html>
